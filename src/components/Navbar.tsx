@@ -31,6 +31,18 @@ export default function MainNavbar() {
           >
             Posts
           </Link>
+          <Link
+            href="/about"
+            className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+          >
+            Sobre
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+          >
+            Contato
+          </Link>
           {isSignedIn && (
             <Link
               href="/dashboard"
@@ -89,6 +101,20 @@ export default function MainNavbar() {
                 onClick={handleToggle}
               >
                 Posts
+              </Link>
+              <Link
+                href="/about"
+                className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+                onClick={handleToggle}
+              >
+                Sobre
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+                onClick={handleToggle}
+              >
+                Contato
               </Link>
               {isSignedIn && (
                 <Link

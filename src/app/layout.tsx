@@ -25,29 +25,26 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Next.js Boilerplate | Professional Starter Template',
+  title: 'Portfolio Odontológico',
   description:
-    'A highly opinionated and production-ready Next.js 15 boilerplate with TypeScript, Tailwind CSS, ESLint, Prettier, Husky, and comprehensive SEO optimization.',
-  keywords:
-    'next.js, boilerplate, typescript, tailwind css, eslint, prettier, husky, seo, nextjs 15, react, web development',
-  authors: [{ name: 'Anwar Hossain' }],
-  creator: 'Anwar Hossain',
+    'Template de portfólio para dentistas construído com Next.js e Tailwind.',
+  keywords: 'dentista, portfolio, consultório, odontologia',
+  authors: [{ name: 'Dentista' }],
+  creator: 'Dentista',
   metadataBase: new URL('https://your-domain.com'),
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'pt_BR',
     url: 'https://your-domain.com',
-    title: 'Next.js Boilerplate | Professional Starter Template',
-    description:
-      'Production-ready Next.js 15 boilerplate with all the essential tools',
-    siteName: 'Next.js Boilerplate',
+    title: 'Portfolio Odontológico',
+    description: 'Apresente seus serviços de forma profissional.',
+    siteName: 'Portfolio Odontológico',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Next.js Boilerplate',
-    description:
-      'Production-ready Next.js 15 boilerplate with all the essential tools',
-    creator: '@anwarhossainsr',
+    title: 'Portfolio Odontológico',
+    description: 'Apresente seus serviços de forma profissional.',
+    creator: '@usuario',
   },
 };
 
