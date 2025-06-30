@@ -7,63 +7,63 @@
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
 
-  /* Paleta vinho (bordô) */
-  --color-border: oklch(85% 0.03 20);
-  --color-input: oklch(85% 0.03 20);
-  --color-ring: oklch(45% 0.18 20);
+  /* Paleta inspirada em vinho */
+  --color-border: oklch(90% 0.02 10);
+  --color-input: oklch(92% 0.02 10);
+  --color-ring: oklch(55% 0.25 15);
   --color-background: oklch(100% 0 0); /* branco */
-  --color-foreground: oklch(25% 0.15 20); /* vinho escuro */
-  --color-primary: oklch(45% 0.18 20); /* vinho */
-  --color-primary-foreground: oklch(98% 0.01 20); /* branco quase puro */
-  --color-secondary: oklch(80% 0.1 20); /* vinho claro */
-  --color-secondary-foreground: oklch(25% 0.15 20);
-  --color-accent: oklch(80% 0.15 20);
-  --color-accent-foreground: oklch(25% 0.15 20);
-  --color-muted: oklch(90% 0.02 20);
-  --color-muted-foreground: oklch(60% 0.05 20);
-  --color-card: oklch(98% 0.01 20);
-  --color-card-foreground: oklch(25% 0.15 20);
+  --color-foreground: oklch(20% 0.03 5); /* texto escuro */
+  --color-primary: oklch(55% 0.25 15); /* vinho */
+  --color-primary-foreground: oklch(99% 0.01 0); /* branco quase puro */
+  --color-secondary: oklch(95% 0.02 15); /* bege suave */
+  --color-secondary-foreground: oklch(20% 0.03 5);
+  --color-accent: oklch(96% 0.02 15);
+  --color-accent-foreground: oklch(20% 0.03 5);
+  --color-muted: oklch(96% 0.01 5);
+  --color-muted-foreground: oklch(45% 0.02 5);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(20% 0.03 5);
 }
 
 @layer base {
   :root {
     --background: oklch(100% 0 0); /* branco */
-    --foreground: oklch(25% 0.15 20); /* vinho escuro */
-    --card: oklch(98% 0.01 20);
-    --card-foreground: oklch(25% 0.15 20);
-    --popover: oklch(98% 0.01 20);
-    --popover-foreground: oklch(25% 0.15 20);
-    --primary: oklch(45% 0.18 20); /* vinho */
-    --primary-foreground: oklch(98% 0.01 20); /* branco quase puro */
-    --secondary: oklch(80% 0.1 20); /* vinho claro */
-    --secondary-foreground: oklch(25% 0.15 20);
-    --muted: oklch(90% 0.02 20);
-    --muted-foreground: oklch(60% 0.05 20);
-    --accent: oklch(80% 0.15 20);
-    --accent-foreground: oklch(25% 0.15 20);
-    --border: oklch(85% 0.03 20);
-    --input: oklch(85% 0.03 20);
-    --ring: oklch(45% 0.18 20);
+    --foreground: oklch(20% 0.03 5); /* texto escuro */
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(20% 0.03 5);
+    --popover: oklch(100% 0 0);
+    --popover-foreground: oklch(20% 0.03 5);
+    --primary: oklch(55% 0.25 15); /* vinho */
+    --primary-foreground: oklch(99% 0.01 0); /* branco quase puro */
+    --secondary: oklch(95% 0.02 15); /* bege suave */
+    --secondary-foreground: oklch(20% 0.03 5);
+    --muted: oklch(96% 0.01 5);
+    --muted-foreground: oklch(45% 0.02 5);
+    --accent: oklch(96% 0.02 15);
+    --accent-foreground: oklch(20% 0.03 5);
+    --border: oklch(90% 0.02 10);
+    --input: oklch(92% 0.02 10);
+    --ring: oklch(55% 0.25 15);
   }
 
   .dark {
-    --background: oklch(18% 0.07 20); /* vinho bem escuro */
-    --foreground: oklch(98% 0.01 20); /* branco quase puro */
-    --card: oklch(22% 0.07 20);
-    --card-foreground: oklch(98% 0.01 20);
-    --popover: oklch(22% 0.07 20);
-    --popover-foreground: oklch(98% 0.01 20);
-    --primary: oklch(65% 0.18 20); /* vinho mais claro para contraste */
-    --primary-foreground: oklch(18% 0.07 20); /* vinho bem escuro */
-    --secondary: oklch(40% 0.06 20);
-    --secondary-foreground: oklch(98% 0.01 20);
-    --muted: oklch(30% 0.04 20);
-    --muted-foreground: oklch(65% 0.05 20);
-    --accent: oklch(75% 0.15 20);
-    --accent-foreground: oklch(98% 0.01 20);
-    --border: oklch(30% 0.04 20);
-    --input: oklch(30% 0.04 20);
-    --ring: oklch(65% 0.18 20);
+    --background: oklch(15% 0.02 5); /* fundo escuro */
+    --foreground: oklch(98% 0.01 0); /* texto claro */
+    --card: oklch(20% 0.02 5);
+    --card-foreground: oklch(98% 0.01 0);
+    --popover: oklch(20% 0.02 5);
+    --popover-foreground: oklch(98% 0.01 0);
+    --primary: oklch(65% 0.25 15); /* vinho mais vivo */
+    --primary-foreground: oklch(15% 0.02 5);
+    --secondary: oklch(28% 0.02 15);
+    --secondary-foreground: oklch(98% 0.01 0);
+    --muted: oklch(25% 0.02 5);
+    --muted-foreground: oklch(60% 0.02 5);
+    --accent: oklch(35% 0.02 5);
+    --accent-foreground: oklch(98% 0.01 0);
+    --border: oklch(35% 0.02 5);
+    --input: oklch(35% 0.02 5);
+    --ring: oklch(65% 0.25 15);
   }
 }
 
