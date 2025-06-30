@@ -7,62 +7,63 @@
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
 
-  --color-border: oklch(88% 0.03 260);
-  --color-input: oklch(88% 0.03 260);
-  --color-ring: oklch(65% 0.2 270);
-  --color-background: oklch(100% 0 0);
-  --color-foreground: oklch(25% 0.15 260);
-  --color-primary: oklch(65% 0.2 270);
-  --color-primary-foreground: oklch(98% 0.01 270);
-  --color-secondary: oklch(80% 0.1 190);
-  --color-secondary-foreground: oklch(25% 0.15 260);
-  --color-accent: oklch(80% 0.15 60);
-  --color-accent-foreground: oklch(25% 0.15 260);
-  --color-muted: oklch(90% 0.02 260);
-  --color-muted-foreground: oklch(60% 0.05 260);
-  --color-card: oklch(98% 0.01 260);
-  --color-card-foreground: oklch(25% 0.15 260);
+  /* Paleta vinho (bordô) */
+  --color-border: oklch(85% 0.03 20);
+  --color-input: oklch(85% 0.03 20);
+  --color-ring: oklch(45% 0.18 20);
+  --color-background: oklch(100% 0 0); /* branco */
+  --color-foreground: oklch(25% 0.15 20); /* vinho escuro */
+  --color-primary: oklch(45% 0.18 20); /* vinho */
+  --color-primary-foreground: oklch(98% 0.01 20); /* branco quase puro */
+  --color-secondary: oklch(80% 0.1 20); /* vinho claro */
+  --color-secondary-foreground: oklch(25% 0.15 20);
+  --color-accent: oklch(80% 0.15 20);
+  --color-accent-foreground: oklch(25% 0.15 20);
+  --color-muted: oklch(90% 0.02 20);
+  --color-muted-foreground: oklch(60% 0.05 20);
+  --color-card: oklch(98% 0.01 20);
+  --color-card-foreground: oklch(25% 0.15 20);
 }
 
 @layer base {
   :root {
-    --background: oklch(100% 0 0);
-    --foreground: oklch(25% 0.15 260);
-    --card: oklch(98% 0.01 260);
-    --card-foreground: oklch(25% 0.15 260);
-    --popover: oklch(98% 0.01 260);
-    --popover-foreground: oklch(25% 0.15 260);
-    --primary: oklch(65% 0.2 270);
-    --primary-foreground: oklch(98% 0.01 270);
-    --secondary: oklch(80% 0.1 190);
-    --secondary-foreground: oklch(25% 0.15 260);
-    --muted: oklch(90% 0.02 260);
-    --muted-foreground: oklch(60% 0.05 260);
-    --accent: oklch(80% 0.15 60);
-    --accent-foreground: oklch(25% 0.15 260);
-    --border: oklch(88% 0.03 260);
-    --input: oklch(88% 0.03 260);
-    --ring: oklch(65% 0.2 270);
+    --background: oklch(100% 0 0); /* branco */
+    --foreground: oklch(25% 0.15 20); /* vinho escuro */
+    --card: oklch(98% 0.01 20);
+    --card-foreground: oklch(25% 0.15 20);
+    --popover: oklch(98% 0.01 20);
+    --popover-foreground: oklch(25% 0.15 20);
+    --primary: oklch(45% 0.18 20); /* vinho */
+    --primary-foreground: oklch(98% 0.01 20); /* branco quase puro */
+    --secondary: oklch(80% 0.1 20); /* vinho claro */
+    --secondary-foreground: oklch(25% 0.15 20);
+    --muted: oklch(90% 0.02 20);
+    --muted-foreground: oklch(60% 0.05 20);
+    --accent: oklch(80% 0.15 20);
+    --accent-foreground: oklch(25% 0.15 20);
+    --border: oklch(85% 0.03 20);
+    --input: oklch(85% 0.03 20);
+    --ring: oklch(45% 0.18 20);
   }
 
   .dark {
-    --background: oklch(15% 0.05 260);
-    --foreground: oklch(90% 0.02 260);
-    --card: oklch(20% 0.05 260);
-    --card-foreground: oklch(90% 0.02 260);
-    --popover: oklch(20% 0.05 260);
-    --popover-foreground: oklch(90% 0.02 260);
-    --primary: oklch(30% 0.05 260);
-    --primary-foreground: oklch(90% 0.02 260);
-    --secondary: oklch(40% 0.06 260);
-    --secondary-foreground: oklch(90% 0.02 260);
-    --muted: oklch(30% 0.04 260);
-    --muted-foreground: oklch(65% 0.05 260);
-    --accent: oklch(75% 0.15 60);
-    --accent-foreground: oklch(90% 0.02 260);
-    --border: oklch(30% 0.04 260);
-    --input: oklch(30% 0.04 260);
-    --ring: oklch(30% 0.05 260);
+    --background: oklch(18% 0.07 20); /* vinho bem escuro */
+    --foreground: oklch(98% 0.01 20); /* branco quase puro */
+    --card: oklch(22% 0.07 20);
+    --card-foreground: oklch(98% 0.01 20);
+    --popover: oklch(22% 0.07 20);
+    --popover-foreground: oklch(98% 0.01 20);
+    --primary: oklch(65% 0.18 20); /* vinho mais claro para contraste */
+    --primary-foreground: oklch(18% 0.07 20); /* vinho bem escuro */
+    --secondary: oklch(40% 0.06 20);
+    --secondary-foreground: oklch(98% 0.01 20);
+    --muted: oklch(30% 0.04 20);
+    --muted-foreground: oklch(65% 0.05 20);
+    --accent: oklch(75% 0.15 20);
+    --accent-foreground: oklch(98% 0.01 20);
+    --border: oklch(30% 0.04 20);
+    --input: oklch(30% 0.04 20);
+    --ring: oklch(65% 0.18 20);
   }
 }
 

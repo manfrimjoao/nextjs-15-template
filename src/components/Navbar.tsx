@@ -1,7 +1,7 @@
 'use client';
 
 import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs';
-import { Github, Menu, X } from 'lucide-react';
+import { Instagram, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -26,10 +26,22 @@ export default function MainNavbar() {
 
         <nav className="hidden md:flex items-center gap-8">
           <Link
-            href="/posts"
+            href="/about"
             className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
           >
-            Posts
+            Sobre
+          </Link>
+          <Link
+            href="/artigos"
+            className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+          >
+            Artigos
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+          >
+            Contato
           </Link>
           {isSignedIn && (
             <Link
@@ -39,14 +51,9 @@ export default function MainNavbar() {
               Dashboard
             </Link>
           )}
-          <Link
-            href="https://github.com/AnwarHossainSR/nextjs-15-template"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
-          >
-            <Github className="h-5 w-5" />
-          </Link>
+          <span className="text-[var(--foreground)]">
+            <Instagram className="h-5 w-5" />
+          </span>
           {isSignedIn ? (
             <>
               <span className="text-sm font-medium text-[var(--foreground)]">
@@ -84,11 +91,25 @@ export default function MainNavbar() {
           <div className="fixed inset-x-0 top-16 z-50 bg-[var(--background)] border-b border-[var(--border)] shadow-lg md:hidden animate-in slide-in-from-top duration-300 max-w-full">
             <div className="container py-6 flex flex-col space-y-4 px-4 sm:px-6 max-w-full">
               <Link
-                href="/posts"
+                href="/about"
                 className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
                 onClick={handleToggle}
               >
-                Posts
+                Sobre
+              </Link>
+              <Link
+                href="/artigos"
+                className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+                onClick={handleToggle}
+              >
+                Artigos
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+                onClick={handleToggle}
+              >
+                Contato
               </Link>
               {isSignedIn && (
                 <Link
@@ -100,15 +121,9 @@ export default function MainNavbar() {
                 </Link>
               )}
               <div className="flex items-center justify-between">
-                <Link
-                  href="https://github.com/AnwarHossainSR/nextjs-15-template"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
-                  onClick={handleToggle}
-                >
-                  <Github className="h-5 w-5" />
-                </Link>
+                <span className="text-[var(--foreground)]">
+                  <Instagram className="h-5 w-5" />
+                </span>
                 {isSignedIn ? (
                   <>
                     <span className="text-sm font-medium text-[var(--foreground)]">

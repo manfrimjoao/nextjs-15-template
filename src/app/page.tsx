@@ -1,164 +1,70 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable import/no-extraneous-dependencies */
-
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
-import Link from 'next/link';
+import FeedbackCarousel from '@/components/FeedbackCarousel';
+import Image from 'next/image';
+
+interface Feedback {
+  name: string;
+  message: string;
+}
+
+const slides = [
+  {
+    src: '/images/foto1.jpg',
+    text: 'Cuide do seu sorriso',
+  },
+  {
+    src: '/images/foto2.jpg',
+    text: 'Atendimento personalizado',
+  },
+  {
+    src: '/images/foto3.jpg',
+    text: 'Tecnologia de ponta',
+  },
+  {
+    src: '/images/foto4.jpg',
+    text: 'Equipe qualificada',
+  },
+  {
+    src: '/images/foto5.jpg',
+    text: 'Ambiente acolhedor',
+  },
+];
+
+const feedbacks: Feedback[] = [
+  { name: 'Paciente 1', message: 'Depoimento do paciente 1.' },
+  { name: 'Paciente 2', message: 'Depoimento do paciente 2.' },
+  { name: 'Paciente 3', message: 'Depoimento do paciente 3.' },
+];
 
 export default function Home() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
-      {/* Hero Section */}
-      <motion.section
-        className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-[var(--background)] relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/[0.1] to-[var(--accent)]/[0.1] pointer-events-none" />
-        <div className="container px-4 sm:px-6 relative z-10 max-w-full">
-          <motion.div
-            className="flex flex-col items-center space-y-6 text-center"
-            {...fadeIn}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-poppins bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">
-              Next.js 15 Boilerplate
-            </h1>
-            <p className="mx-auto max-w-[600px] text-[var(--muted-foreground)] text-base sm:text-lg px-4">
-              A production-ready starter template with cutting-edge tools and
-              best practices for modern web development.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4">
-              <Link
-                href="/docs"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[var(--primary)] px-6 text-sm font-semibold text-[var(--primary-foreground)] shadow-lg hover:bg-[var(--primary)]/[0.9] transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                href="https://github.com/AnwarHossainSR/nextjs-15-template"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)] px-6 text-sm font-semibold text-[var(--foreground)] shadow-sm hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-              >
-                View on GitHub
-                <Code className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-          </motion.div>
+      <section className="w-full flex flex-col items-center justify-center min-h-[60vh] py-12 animate-fade-in">
+        <div className="relative w-40 h-40 mb-6 animate-scale-in">
+          <Image
+            src="/images/foto3.jpg"
+            alt="Foto do profissional"
+            fill
+            className="object-cover rounded-full border-4 border-[var(--primary)] shadow-lg"
+            priority
+          />
         </div>
-      </motion.section>
-
-      {/* Features Section */}
-      <motion.section
-        className="w-full py-12 sm:py-16 md:py-24 bg-[var(--card)]"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4 animate-slide-up">Dr. Nome do Dentista</h1>
+        <p className="text-lg sm:text-xl text-center max-w-xl mb-2 animate-slide-up delay-100">
+          Cirurgião-Dentista | CRO 00000<br/>
+          Especialista em Sorrisos e Bem-estar
+        </p>
+        <p className="text-md text-center max-w-2xl text-muted-foreground animate-slide-up delay-200">
+          Com anos de experiência, dedicação e tecnologia de ponta, ofereço um atendimento humanizado e personalizado para transformar o seu sorriso. Agende sua consulta e descubra um novo motivo para sorrir!
+        </p>
+      </section>
+      <section className="w-full py-12 bg-[var(--card)]">
         <div className="container px-4 sm:px-6 max-w-full">
-          <motion.div
-            className="flex flex-col items-center justify-center space-y-6 text-center"
-            {...fadeIn}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter font-poppins text-[var(--foreground)]">
-              Why Choose NextBoiler?
-            </h2>
-            <p className="mx-auto max-w-[600px] text-[var(--muted-foreground)] text-base sm:text-lg px-4">
-              Everything you need to build scalable, high-performance web
-              applications.
-            </p>
-          </motion.div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 px-4">
-            {[
-              {
-                icon: Zap,
-                title: 'Blazing Performance',
-                description:
-                  'Optimized with Next.js 15 for lightning-fast page loads and seamless user experiences.',
-              },
-              {
-                icon: ShieldCheck,
-                title: 'Best Practices',
-                description:
-                  'TypeScript, ESLint, Prettier, and Husky ensure robust, maintainable codebases.',
-              },
-              {
-                icon: Rocket,
-                title: 'Production Ready',
-                description:
-                  'SEO-optimized, responsive, and accessible, ready for enterprise-grade projects.',
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                className="relative flex flex-col items-center space-y-4 rounded-xl bg-[var(--background)] p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-[var(--border)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)] p-3 shadow-md">
-                  <feature.icon className="h-6 w-6 text-[var(--accent-foreground)]" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-[var(--foreground)] pt-8">
-                  {feature.title}
-                </h3>
-                <p className="text-center text-[var(--muted-foreground)] text-sm sm:text-base">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="text-2xl font-bold text-center mb-8">Feedbacks</h2>
+          <FeedbackCarousel feedbacks={feedbacks} />
         </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section
-        className="w-full py-12 sm:py-16 md:py-24 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] text-[var(--primary-foreground)]"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container px-4 sm:px-6 max-w-full">
-          <motion.div
-            className="flex flex-col items-center space-y-6 text-center"
-            {...fadeIn}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter font-poppins">
-              Start Building Today
-            </h2>
-            <p className="mx-auto max-w-[600px] text-[var(--primary-foreground)]/[0.9] text-base sm:text-lg px-4">
-              Clone the repository and launch your next project with confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4">
-              <pre className="bg-[var(--card)]/[0.95] px-4 py-3 rounded-xl font-mono text-xs sm:text-sm text-[var(--foreground)] shadow-inner w-full overflow-x-auto max-w-full">
-                <code>
-                  git clone
-                  https://github.com/AnwarHossainSR/nextjs-15-template.git
-                </code>
-              </pre>
-            </div>
-            <Link
-              href="/docs"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold text-[var(--accent-foreground)] shadow-lg hover:bg-[var(--accent)]/[0.9] transition-all duration-300 hover:scale-105 w-full sm:w-auto mx-4"
-            >
-              Explore Documentation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
+      </section>
     </div>
   );
 }
