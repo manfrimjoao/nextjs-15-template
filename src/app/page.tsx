@@ -1,7 +1,7 @@
 'use client';
 
-import FeedbackCarousel from '@/components/FeedbackCarousel';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
 interface Feedback {
@@ -47,7 +47,12 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="w-full py-16 bg-[var(--card)]">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full py-16 bg-[var(--card)]"
+      >
         <div className="container grid items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-3xl sm:text-5xl font-bold">Dr. Nome do Dentista</h1>
@@ -64,16 +69,26 @@ export default function Home() {
             className="rounded-lg object-cover w-full h-64 md:h-auto"
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Áreas de Atuação */}
-      <section className="w-full py-12">
+      <motion.section
+        className="w-full py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container px-4 sm:px-6 space-y-12">
           <h2 className="text-2xl font-bold text-center">Áreas de Atuação</h2>
           {areas.map((area, index) => (
-            <div
+            <motion.div
               key={area.title}
               className={`flex flex-col items-center gap-6 md:gap-8 md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Image
                 src={area.image}
@@ -86,18 +101,38 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">{area.title}</h3>
                 <p className="text-sm text-[var(--muted-foreground)]">{area.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section className="w-full py-12 bg-[var(--card)]">
-        <div className="container px-4 sm:px-6 max-w-full">
+      <motion.section
+        className="w-full py-12 bg-[var(--card)]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container px-4 sm:px-6 max-w-full space-y-6">
           <h2 className="text-2xl font-bold text-center mb-8">Depoimentos</h2>
-          <FeedbackCarousel feedbacks={feedbacks} />
+          {feedbacks.map((fb, index) => (
+            <motion.div
+              key={fb.name}
+              className="mx-auto max-w-md p-6 rounded-xl shadow-md bg-[var(--background)] border border-[var(--border)]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <p className="mb-4 text-lg text-center">“{fb.message}”</p>
+              <span className="text-sm font-semibold text-[var(--primary)] block text-center">
+                {fb.name}
+              </span>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
