@@ -66,7 +66,7 @@ export default function Home() {
             alt="Dr. Nome do Dentista"
             width={500}
             height={500}
-            className="rounded-lg object-cover w-full h-64 md:h-auto"
+            className="image-frame w-full h-64 md:h-auto object-cover"
           />
         </div>
       </motion.section>
@@ -95,7 +95,7 @@ export default function Home() {
                 alt={area.title}
                 width={500}
                 height={300}
-                className="rounded-lg object-cover w-full md:w-1/2 h-64 md:h-auto"
+                className="image-frame w-full md:w-1/2 h-64 md:h-auto object-cover"
               />
               <div className="md:w-1/2 space-y-2 text-center md:text-left">
                 <h3 className="text-lg font-semibold">{area.title}</h3>

@@ -80,3 +80,9 @@
     @apply overflow-x-hidden max-w-full;
   }
 }
+
+@layer components {
+  .image-frame {
+    @apply rounded-xl shadow-lg border border-[var(--border)];
+  }
+}
