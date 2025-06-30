@@ -1,7 +1,6 @@
 'use client';
 
 import FeedbackCarousel from '@/components/FeedbackCarousel';
-import ImageCarousel from '@/components/ImageCarousel';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
@@ -10,36 +9,13 @@ interface Feedback {
   message: string;
 }
 
-const slides = [
-  {
-    src: '/images/foto1.jpg',
-    text: 'Cuide do seu sorriso',
-  },
-  {
-    src: '/images/foto2.jpg',
-    text: 'Atendimento personalizado',
-  },
-  {
-    src: '/images/foto3.jpg',
-    text: 'Tecnologia de ponta',
-  },
-  {
-    src: '/images/foto4.jpg',
-    text: 'Equipe qualificada',
-  },
-  {
-    src: '/images/foto5.jpg',
-    text: 'Ambiente acolhedor',
-  },
-];
-
 const feedbacks: Feedback[] = [
   { name: 'Paciente 1', message: 'Depoimento do paciente 1.' },
   { name: 'Paciente 2', message: 'Depoimento do paciente 2.' },
   { name: 'Paciente 3', message: 'Depoimento do paciente 3.' },
 ];
 
-const services = [
+const areas = [
   {
     image: '/images/foto1.jpg',
     title: 'Implantes Dentários',
@@ -71,30 +47,47 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="w-full relative">
-        <ImageCarousel slides={slides} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-[var(--primary-foreground)] bg-black/40 p-4 space-y-4">
-          <h1 className="text-3xl sm:text-5xl font-bold text-center">Dr. Nome do Dentista</h1>
-          <p className="text-lg sm:text-2xl text-center">CRO 00000 • Sorrisos saudáveis e bem-estar</p>
-          <Button asChild size="lg" variant="secondary" withAnimation>
-            <a href="/contact">Agende sua consulta</a>
-          </Button>
+      <section className="w-full py-16 bg-[var(--card)]">
+        <div className="container grid items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
+          <div className="space-y-6 text-center md:text-left">
+            <h1 className="text-3xl sm:text-5xl font-bold">Dr. Nome do Dentista</h1>
+            <p className="text-lg sm:text-2xl">CRO 00000 • Sorrisos saudáveis e bem-estar</p>
+            <Button asChild size="lg" withAnimation>
+              <a href="/contact">Agende sua consulta</a>
+            </Button>
+          </div>
+          <Image
+            src="/images/foto1.jpg"
+            alt="Dr. Nome do Dentista"
+            width={500}
+            height={500}
+            className="rounded-lg object-cover w-full h-64 md:h-auto"
+          />
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Áreas de Atuação */}
       <section className="w-full py-12">
-        <div className="container px-4 sm:px-6 max-w-full">
-          <h2 className="text-2xl font-bold text-center mb-8">Serviços</h2>
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-            {services.map((servico) => (
-              <div key={servico.title} className="flex flex-col items-center text-center space-y-4">
-                <Image src={servico.image} alt={servico.title} width={300} height={200} className="rounded-lg object-cover" />
-                <h3 className="text-lg font-semibold">{servico.title}</h3>
-                <p className="text-sm text-[var(--muted-foreground)]">{servico.description}</p>
+        <div className="container px-4 sm:px-6 space-y-12">
+          <h2 className="text-2xl font-bold text-center">Áreas de Atuação</h2>
+          {areas.map((area, index) => (
+            <div
+              key={area.title}
+              className={`flex flex-col items-center gap-6 md:gap-8 md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+            >
+              <Image
+                src={area.image}
+                alt={area.title}
+                width={500}
+                height={300}
+                className="rounded-lg object-cover w-full md:w-1/2 h-64 md:h-auto"
+              />
+              <div className="md:w-1/2 space-y-2 text-center md:text-left">
+                <h3 className="text-lg font-semibold">{area.title}</h3>
+                <p className="text-sm text-[var(--muted-foreground)]">{area.description}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
