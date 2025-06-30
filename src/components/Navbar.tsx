@@ -32,6 +32,12 @@ export default function MainNavbar() {
             Sobre
           </Link>
           <Link
+            href="/artigos"
+            className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+          >
+            Artigos
+          </Link>
+          <Link
             href="/contact"
             className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
           >
@@ -90,6 +96,13 @@ export default function MainNavbar() {
                 onClick={handleToggle}
               >
                 Sobre
+              </Link>
+              <Link
+                href="/artigos"
+                className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
+                onClick={handleToggle}
+              >
+                Artigos
               </Link>
               <Link
                 href="/contact"
