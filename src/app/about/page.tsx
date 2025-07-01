@@ -12,7 +12,7 @@ export default function About() {
         alt="Profissional"
         width={400}
         height={400}
-        className="rounded-lg object-cover"
+        className="image-frame object-cover"
       />
       <div className="bg-[var(--card)] p-6 rounded-xl shadow-md max-w-2xl text-center">
         <p>lorem ipsum indolor...</p>
