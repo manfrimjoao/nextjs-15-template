@@ -71,6 +71,34 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Sobre o Doutor */}
+      <motion.section
+        className="w-full py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container grid items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
+          <Image
+            src="/images/foto2.jpg"
+            alt="Consultório"
+            width={500}
+            height={500}
+            className="image-frame w-full h-64 md:h-auto object-cover"
+          />
+          <div className="space-y-4 text-center md:text-left">
+            <h2 className="text-2xl font-bold">Sobre o Dr.</h2>
+            <p className="text-sm text-[var(--muted-foreground)]">
+              Profissional dedicado a proporcionar tratamentos de excelência com foco no bem-estar e na saúde bucal.
+            </p>
+            <Button asChild size="lg" withAnimation>
+              <a href="/contact">Agende sua avaliação</a>
+            </Button>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Áreas de Atuação */}
       <motion.section
         className="w-full py-12"
@@ -131,6 +159,34 @@ export default function Home() {
               </span>
             </motion.div>
           ))}
+        </div>
+      </motion.section>
+
+      {/* Contato CTA */}
+      <motion.section
+        className="w-full py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container grid items-center gap-8 px-4 sm:px-6 md:grid-cols-2">
+          <div className="space-y-4 text-center md:text-left">
+            <h2 className="text-2xl font-bold">Agende sua consulta</h2>
+            <p className="text-sm text-[var(--muted-foreground)]">
+              Entre em contato para marcar uma avaliação personalizada.
+            </p>
+            <Button asChild size="lg" withAnimation>
+              <a href="/contact">Fale conosco</a>
+            </Button>
+          </div>
+          <Image
+            src="/images/foto3.jpg"
+            alt="Contato"
+            width={500}
+            height={500}
+            className="image-frame w-full h-64 md:h-auto object-cover"
+          />
         </div>
       </motion.section>
     </div>
